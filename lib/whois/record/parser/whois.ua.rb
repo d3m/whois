@@ -65,7 +65,7 @@ module Whois
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /status:\s+(.+)\n/
+          if content_for_scanner =~ /expires:\s+(.+)\n/
             time = $1.split(" ").last
             Time.parse(time)
           end
